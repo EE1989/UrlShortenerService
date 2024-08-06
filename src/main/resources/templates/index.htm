@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+         <form th:action="@{/linkReady}" method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control"  id="url" name="url" th:value="${urlForm.url}"  placeholder="Shorten URL" >
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Create Link</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div th:if="${error}" class="alert alert-danger">
+    <span th:text="${error}"></span>
+</div>
+</div>
+
+</body>
+</html>
